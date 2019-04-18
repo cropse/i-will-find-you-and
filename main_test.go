@@ -18,12 +18,6 @@ func TestMain(m *testing.M) {
 }
 
 func TestApi(t *testing.T) {
-	// req, err := http.NewRequest("GET", "127.0.0.1/api/ipinfo/8.8.8.8", nil)
-	// // resp, err := http.Get("http://127.0.0.1:7000/api/ipinfo/8.8.8.8")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
 	req, _ := http.NewRequest("GET", "/api/ipinfo/8.8.8.8", nil)
 	response := executeRequest(req)
 
