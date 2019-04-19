@@ -18,7 +18,7 @@ func TestMain(m *testing.M) {
 }
 
 func TestApi(t *testing.T) {
-	req, _ := http.NewRequest("GET", "/api/ipinfo/8.8.8.8", nil)
+	req, _ := http.NewRequest("GET", "/v1/ipinfo/8.8.8.8", nil)
 	response := executeRequest(req)
 
 	checkResponseCode(t, http.StatusOK, response.Code)

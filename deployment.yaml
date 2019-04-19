@@ -1,0 +1,42 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: not-shito
+spec:
+  selector:
+    app: not-shito
+  ports:
+  - protocol: TCP
+    port: 7000
+    targetPort: 7000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: not-shito
+  labels:
+    app: not-shito
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: not-shito
+  template:
+    metadata:
+      labels:
+        app: not-shito
+    spec:
+      imagePullSecrets:
+      - name: ciunnotech
+      containers:
+      - name: app
+        image: unnotechlottery/not-shito
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 200m
+            memory: 300Mi
+          limits:
+            cpu: 600m
+            memory: 800Mi

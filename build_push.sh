@@ -1,0 +1,1 @@
+docker build -t cropse/I-will-find-you-and ./

@@ -37,7 +37,7 @@ func getRegionByIP(rawIP string) (*regionInfo, error) {
 	}
 	log.Printf("%+v\n", record)
 	region := &regionInfo{
-		Code: 0,
+		Code: 1,
 		Data: Data{
 			Area:      record.Continent.Names["zh-CN"],
 			AreaID:    record.Continent.Code,

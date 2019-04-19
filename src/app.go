@@ -18,7 +18,7 @@ func (a *App) Run(addr string) {
 }
 func (a *App) initialize() {
 	a.Router = mux.NewRouter()
-	a.Router.HandleFunc("/api/ipinfo/{rawIP}", a.getRegion).Methods("GET")
+	a.Router.HandleFunc("/v1/ipinfo/{rawIP}", a.getRegion).Methods("GET")
 }
 func (a *App) getRegion(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
